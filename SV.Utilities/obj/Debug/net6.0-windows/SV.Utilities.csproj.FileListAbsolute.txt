@@ -1,0 +1,11 @@
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Utilities\bin\Debug\net6.0-windows\SV.Utilities.deps.json
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Utilities\bin\Debug\net6.0-windows\SV.Utilities.dll
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Utilities\bin\Debug\net6.0-windows\SV.Utilities.pdb
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Utilities\obj\Debug\net6.0-windows\SV.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Utilities\obj\Debug\net6.0-windows\SV.Utilities.AssemblyInfoInputs.cache
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Utilities\obj\Debug\net6.0-windows\SV.Utilities.AssemblyInfo.cs
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Utilities\obj\Debug\net6.0-windows\SV.Utilities.csproj.CoreCompileInputs.cache
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Utilities\obj\Debug\net6.0-windows\SV.Utilities.dll
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Utilities\obj\Debug\net6.0-windows\refint\SV.Utilities.dll
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Utilities\obj\Debug\net6.0-windows\SV.Utilities.pdb
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Utilities\obj\Debug\net6.0-windows\ref\SV.Utilities.dll

@@ -1,0 +1,11 @@
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Domain\bin\Debug\net6.0-windows\SV.Domain.deps.json
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Domain\bin\Debug\net6.0-windows\SV.Domain.dll
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Domain\bin\Debug\net6.0-windows\SV.Domain.pdb
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Domain\obj\Debug\net6.0-windows\SV.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Domain\obj\Debug\net6.0-windows\SV.Domain.AssemblyInfoInputs.cache
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Domain\obj\Debug\net6.0-windows\SV.Domain.AssemblyInfo.cs
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Domain\obj\Debug\net6.0-windows\SV.Domain.csproj.CoreCompileInputs.cache
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Domain\obj\Debug\net6.0-windows\SV.Domain.dll
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Domain\obj\Debug\net6.0-windows\refint\SV.Domain.dll
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Domain\obj\Debug\net6.0-windows\SV.Domain.pdb
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.Domain\obj\Debug\net6.0-windows\ref\SV.Domain.dll
