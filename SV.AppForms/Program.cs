@@ -38,7 +38,8 @@ namespace SV.AppForms
 
             services.AddSingleton<LoginInfo>();
 
-            services.AddScoped<FormGrades>();
+            services.AddScoped<FormGrades>()
+                .AddScoped<FormUsers>();
 
             services.AddSingleton<FormLogin>();
         }

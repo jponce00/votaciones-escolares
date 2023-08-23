@@ -21,13 +21,28 @@ namespace SV.Infrastructure.Persistences.Repositories
             return await _context.Users.FirstOrDefaultAsync(u => u.UserName.Equals(userName));
         }
 
-        public async Task<bool> LoginSucceeded(UserDto userDto)
+        public async Task<int> LoginSucceeded(UserDto userDto)
         {
             var user = await GetUserByUserNameAsync(userDto.UserName);
 
             if (user != null)
             {
                 if (user.Password == userDto.Password)
+                {
+                    return user.Id;
+                }
+            }
+
+            return 0;
+        }
+
+        public async Task<bool> VerifyPassword(int userId, string password)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id.Equals(userId));
+
+            if (user != null)
+            {
+                if (user.Password == password)
                 {
                     return true;
                 }

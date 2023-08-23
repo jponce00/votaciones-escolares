@@ -7,6 +7,8 @@ namespace SV.Infrastructure.Persistences.Interfaces
     {
         Task<User?> GetUserByUserNameAsync(string userName);
 
-        Task<bool> LoginSucceeded(UserDto userDto);
+        Task<int> LoginSucceeded(UserDto userDto);
+
+        Task<bool> VerifyPassword(int userId, string password);
     }
 }

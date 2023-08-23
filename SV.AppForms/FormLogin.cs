@@ -8,13 +8,19 @@ namespace SV.AppForms
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly FormGrades _formGrades;
+        private readonly FormUsers _formUsers;
 
         private readonly LoginInfo _loginInfo;
 
-        public FormLogin(IUnitOfWork unitOfWork, FormGrades formGrades, LoginInfo loginInfo)
+        public FormLogin(
+            IUnitOfWork unitOfWork,
+            FormGrades formGrades,
+            FormUsers formUsers,
+            LoginInfo loginInfo)
         {
             _unitOfWork = unitOfWork;
             _formGrades = formGrades;
+            _formUsers = formUsers;
 
             _loginInfo = loginInfo;
 
@@ -50,18 +56,18 @@ namespace SV.AppForms
                 Password = Encrypt.GetSha256(TxtPassword.Text)
             };
 
-            var isSuccess = await _unitOfWork.User.LoginSucceeded(userDto);
+            var userId = await _unitOfWork.User.LoginSucceeded(userDto);
 
-            if (isSuccess)
+            if (userId != 0)
             {
                 int shift = Convert.ToInt32(CmbShift.Text.Split(".")[0]);
 
                 _loginInfo.Shift = shift;
-                _loginInfo.IsLogued = true;
+                _loginInfo.UserId = userId;
 
                 this.CleanTexts();
 
-                MainForm mainForm = new(this, _formGrades);
+                MainForm mainForm = new(this, _formGrades, _formUsers);
                 mainForm.Show();
                 this.Hide();
             }

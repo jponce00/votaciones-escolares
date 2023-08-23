@@ -60,12 +60,13 @@
             // PbUser
             // 
             PbUser.Image = (Image)resources.GetObject("PbUser.Image");
-            PbUser.Location = new Point(760, 12);
+            PbUser.Location = new Point(723, 12);
             PbUser.Name = "PbUser";
-            PbUser.Size = new Size(28, 31);
+            PbUser.Size = new Size(36, 34);
             PbUser.SizeMode = PictureBoxSizeMode.Zoom;
             PbUser.TabIndex = 3;
             PbUser.TabStop = false;
+            PbUser.Click += PbUser_Click;
             // 
             // MainForm
             // 

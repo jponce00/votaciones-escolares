@@ -4,6 +4,6 @@
     {
         public int Shift { get; set; }
 
-        public bool IsLogued { get; set; }
+        public int UserId { get; set; }
     }
 }
