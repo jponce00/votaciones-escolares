@@ -9,6 +9,7 @@ namespace SV.AppForms
         private readonly IUnitOfWork _unitOfWork;
         private readonly FormGrades _formGrades;
         private readonly FormUsers _formUsers;
+        private readonly FormCandidates _formCandidates;
 
         private readonly LoginInfo _loginInfo;
 
@@ -16,11 +17,13 @@ namespace SV.AppForms
             IUnitOfWork unitOfWork,
             FormGrades formGrades,
             FormUsers formUsers,
-            LoginInfo loginInfo)
+            LoginInfo loginInfo,
+            FormCandidates formCandidates)
         {
             _unitOfWork = unitOfWork;
             _formGrades = formGrades;
             _formUsers = formUsers;
+            _formCandidates = formCandidates;
 
             _loginInfo = loginInfo;
 
@@ -67,7 +70,7 @@ namespace SV.AppForms
 
                 this.CleanTexts();
 
-                MainForm mainForm = new(this, _formGrades, _formUsers);
+                MainForm mainForm = new(this, _formGrades, _formUsers, _formCandidates);
                 mainForm.Show();
                 this.Hide();
             }

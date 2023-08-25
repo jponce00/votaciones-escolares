@@ -15,6 +15,8 @@ namespace SV.Infrastructure.Persistences.Repositories
 
         public IStudentRepository Student { get; private set; }
 
+        public ICandidateRepository Candidate { get; private set; }
+
         public UnitOfWork(SVContext context)
         {
             _context = context;
@@ -25,6 +27,7 @@ namespace SV.Infrastructure.Persistences.Repositories
             User = new UserRepository(_context);
             Shift = new ShiftRepository(_context);
             Student = new StudentRepository(_context);
+            Candidate = new CandidateRepository(_context);
         }
 
         public void Dispose()

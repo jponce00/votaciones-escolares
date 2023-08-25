@@ -10,6 +10,8 @@
 
         IStudentRepository Student { get; }
 
+        ICandidateRepository Candidate { get; }
+
         void SaveChanges();
 
         Task SaveChangesAsync();

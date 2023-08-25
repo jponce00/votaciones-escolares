@@ -79,7 +79,7 @@ namespace SV.AppForms
                     }
                     catch (Exception)
                     {
-                        MessageBoxComponent.ShowError("Ocurrió un error al actualizar el Grado.");
+                        MessageBoxComponent.ShowError("Ocurrió un error al guardar el Grado.");
                     }
                 }
             }

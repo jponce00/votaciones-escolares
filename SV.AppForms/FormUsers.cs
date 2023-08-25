@@ -114,41 +114,48 @@ namespace SV.AppForms
 
         private async void BtnSave_Click(object sender, EventArgs e)
         {
-            var user = await _unitOfWork.User.GetByIdAsync(_loginInfo.UserId);
-
-            if (user != null)
+            try
             {
-                if (this.ValidateData())
+                var user = await _unitOfWork.User.GetByIdAsync(_loginInfo.UserId);
+
+                if (user != null)
                 {
-                    user.Name = TxtName.Text.Trim();
-                    user.UserName = TxtUsername.Text.Trim();
-
-                    if ((TxtPassword.Text.Trim().Length > 0 && (await this.ValidatePasswordChanged())) || TxtPassword.Text.Trim().Length == 0)
+                    if (this.ValidateData())
                     {
-                        if (TxtPassword.Text.Trim().Length > 0)
-                        {
-                            user.Password = Encrypt.GetSha256(TxtPassword.Text.Trim());
-                        }
+                        user.Name = TxtName.Text.Trim();
+                        user.UserName = TxtUsername.Text.Trim();
 
-                        var isSuccess = await _unitOfWork.User.EditAsync(user);
-
-                        if (isSuccess)
+                        if ((TxtPassword.Text.Trim().Length > 0 && (await this.ValidatePasswordChanged())) || TxtPassword.Text.Trim().Length == 0)
                         {
-                            MessageBoxComponent.ShowInfo(ReplyMessage.MESSAGE_UPDATE);
-                        }
-                        else
-                        {
-                            MessageBoxComponent.ShowWarning(ReplyMessage.MESSAGE_FAILED);
-                        }
+                            if (TxtPassword.Text.Trim().Length > 0)
+                            {
+                                user.Password = Encrypt.GetSha256(TxtPassword.Text.Trim());
+                            }
 
-                        this.Close();
+                            var isSuccess = await _unitOfWork.User.EditAsync(user);
+
+                            if (isSuccess)
+                            {
+                                MessageBoxComponent.ShowInfo(ReplyMessage.MESSAGE_UPDATE);
+                            }
+                            else
+                            {
+                                MessageBoxComponent.ShowWarning(ReplyMessage.MESSAGE_FAILED);
+                            }
+
+                            this.Close();
+                        }
                     }
                 }
+                else
+                {
+                    MessageBoxComponent.ShowError(ReplyMessage.MESSAGE_DOESNOT_EXIST);
+                    this.Close();
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBoxComponent.ShowError(ReplyMessage.MESSAGE_DOESNOT_EXIST);
-                this.Close();
+                MessageBoxComponent.ShowWarning("Ocurrió un error al actualizar los datos del usuario.");
             }
         }
     }

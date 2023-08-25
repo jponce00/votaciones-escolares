@@ -27,6 +27,10 @@ namespace SV.Infrastructure.Persistences.Contexts
 
         public DbSet<Grade> Grades { get; set; }
 
+        public DbSet<Shift> Shifts { get; set; }
+
+        public DbSet<Candidate> Candidates { get; set; }
+
         public DbSet<User> Users { get; set; }
 
         public DbSet<Role> Roles { get; set; }

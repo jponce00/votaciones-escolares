@@ -70,3 +70,6 @@ C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windo
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormStudents.resources
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormStudentsAdd.resources
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormUsers.resources
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormCandidates.resources
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormCandidatesAdd.resources
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.Properties.Resources.resources

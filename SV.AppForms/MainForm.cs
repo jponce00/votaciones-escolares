@@ -5,12 +5,14 @@
         private readonly FormLogin _formLogin;
         private readonly FormGrades _formGrades;
         private readonly FormUsers _formUsers;
+        private readonly FormCandidates _formCandidates;
 
-        public MainForm(FormLogin formLogin, FormGrades formGrades, FormUsers formUsers)
+        public MainForm(FormLogin formLogin, FormGrades formGrades, FormUsers formUsers, FormCandidates formCandidates)
         {
             _formLogin = formLogin;
             _formGrades = formGrades;
             _formUsers = formUsers;
+            _formCandidates = formCandidates;
 
             InitializeComponent();
         }
@@ -33,6 +35,11 @@
         private void PbUser_Click(object sender, EventArgs e)
         {
             _formUsers.ShowDialog();
+        }
+
+        private void BtnCandidates_Click(object sender, EventArgs e)
+        {
+            _formCandidates.ShowDialog();
         }
     }
 }

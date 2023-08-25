@@ -34,6 +34,7 @@
             label1 = new Label();
             PbUser = new PictureBox();
             toolTipUser = new ToolTip(components);
+            BtnCandidates = new Button();
             ((System.ComponentModel.ISupportInitialize)PbUser).BeginInit();
             SuspendLayout();
             // 
@@ -68,11 +69,22 @@
             PbUser.TabStop = false;
             PbUser.Click += PbUser_Click;
             // 
+            // BtnCandidates
+            // 
+            BtnCandidates.Location = new Point(208, 143);
+            BtnCandidates.Name = "BtnCandidates";
+            BtnCandidates.Size = new Size(103, 39);
+            BtnCandidates.TabIndex = 4;
+            BtnCandidates.Text = "Candidatos";
+            BtnCandidates.UseVisualStyleBackColor = true;
+            BtnCandidates.Click += BtnCandidates_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(BtnCandidates);
             Controls.Add(PbUser);
             Controls.Add(label1);
             Controls.Add(btnOpenGrades);
@@ -91,5 +103,6 @@
         private Label label1;
         private PictureBox PbUser;
         private ToolTip toolTipUser;
+        private Button BtnCandidates;
     }
 }
