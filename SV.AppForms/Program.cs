@@ -40,7 +40,8 @@ namespace SV.AppForms
 
             services.AddScoped<FormGrades>()
                 .AddScoped<FormUsers>()
-                .AddScoped<FormCandidates>();
+                .AddScoped<FormCandidates>()
+                .AddScoped<FormVotes>();
 
             services.AddSingleton<FormLogin>();
         }

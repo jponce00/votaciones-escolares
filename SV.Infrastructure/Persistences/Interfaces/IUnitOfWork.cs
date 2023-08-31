@@ -12,6 +12,8 @@
 
         ICandidateRepository Candidate { get; }
 
+        IVoteRepository Vote { get; }
+
         void SaveChanges();
 
         Task SaveChangesAsync();

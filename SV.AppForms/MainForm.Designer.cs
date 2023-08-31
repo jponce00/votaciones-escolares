@@ -35,6 +35,7 @@
             PbUser = new PictureBox();
             toolTipUser = new ToolTip(components);
             BtnCandidates = new Button();
+            BtnVotes = new Button();
             ((System.ComponentModel.ISupportInitialize)PbUser).BeginInit();
             SuspendLayout();
             // 
@@ -79,11 +80,22 @@
             BtnCandidates.UseVisualStyleBackColor = true;
             BtnCandidates.Click += BtnCandidates_Click;
             // 
+            // BtnVotes
+            // 
+            BtnVotes.Location = new Point(356, 143);
+            BtnVotes.Name = "BtnVotes";
+            BtnVotes.Size = new Size(109, 39);
+            BtnVotes.TabIndex = 5;
+            BtnVotes.Text = "Votaciones";
+            BtnVotes.UseVisualStyleBackColor = true;
+            BtnVotes.Click += BtnVotes_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(BtnVotes);
             Controls.Add(BtnCandidates);
             Controls.Add(PbUser);
             Controls.Add(label1);
@@ -104,5 +116,6 @@
         private PictureBox PbUser;
         private ToolTip toolTipUser;
         private Button BtnCandidates;
+        private Button BtnVotes;
     }
 }

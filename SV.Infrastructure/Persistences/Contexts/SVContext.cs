@@ -15,7 +15,7 @@ namespace SV.Infrastructure.Persistences.Contexts
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=.;Database=SistemaVotaciones;Integrated Security=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer(@"Server=.;Database=SistemaVotaciones;Integrated Security=True;TrustServerCertificate=True;MultipleActiveResultSets=True");
         }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
@@ -30,6 +30,8 @@ namespace SV.Infrastructure.Persistences.Contexts
         public DbSet<Shift> Shifts { get; set; }
 
         public DbSet<Candidate> Candidates { get; set; }
+
+        public DbSet<Vote> Votes { get; set; }
 
         public DbSet<User> Users { get; set; }
 

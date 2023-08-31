@@ -90,6 +90,7 @@
             TxtPassword.Name = "TxtPassword";
             TxtPassword.Size = new Size(237, 29);
             TxtPassword.TabIndex = 3;
+            TxtPassword.Text = "admin";
             TxtPassword.UseSystemPasswordChar = true;
             // 
             // TxtUsername
@@ -98,6 +99,7 @@
             TxtUsername.Name = "TxtUsername";
             TxtUsername.Size = new Size(237, 29);
             TxtUsername.TabIndex = 2;
+            TxtUsername.Text = "admin";
             // 
             // label2
             // 

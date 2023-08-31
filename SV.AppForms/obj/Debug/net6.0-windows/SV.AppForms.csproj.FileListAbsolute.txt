@@ -52,10 +52,17 @@ C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\bin\Debug\net6.0-windo
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\bin\Debug\net6.0-windows\SV.Utilities.pdb
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\bin\Debug\net6.0-windows\SV.Domain.pdb
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.csproj.AssemblyReference.cache
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormCandidates.resources
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormCandidatesAdd.resources
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormGrades.resources
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormGradesAdd.resources
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormLogin.resources
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormStudents.resources
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormStudentsAdd.resources
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormUsers.resources
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormVotes.resources
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.MainForm.resources
+C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.Properties.Resources.resources
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.csproj.GenerateResource.cache
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.AssemblyInfoInputs.cache
@@ -67,9 +74,3 @@ C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windo
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.pdb
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.genruntimeconfig.cache
 C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\ref\SV.AppForms.dll
-C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormStudents.resources
-C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormStudentsAdd.resources
-C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormUsers.resources
-C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormCandidates.resources
-C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.FormCandidatesAdd.resources
-C:\Users\jairo\source\repos\SistemaVotaciones\SV.AppForms\obj\Debug\net6.0-windows\SV.AppForms.Properties.Resources.resources
