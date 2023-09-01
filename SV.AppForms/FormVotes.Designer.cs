@@ -38,6 +38,7 @@
             FlpVote = new FlowLayoutPanel();
             BtnVote = new Button();
             BtnChange = new Button();
+            BtnNew = new Button();
             groupBox1.SuspendLayout();
             GbVote.SuspendLayout();
             SuspendLayout();
@@ -50,7 +51,7 @@
             groupBox1.Controls.Add(BtnContinue);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
-            groupBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(1432, 268);
@@ -62,9 +63,9 @@
             // 
             CmbStudents.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbStudents.FormattingEnabled = true;
-            CmbStudents.Location = new Point(138, 116);
+            CmbStudents.Location = new Point(164, 116);
             CmbStudents.Name = "CmbStudents";
-            CmbStudents.Size = new Size(414, 29);
+            CmbStudents.Size = new Size(734, 40);
             CmbStudents.TabIndex = 4;
             CmbStudents.SelectedIndexChanged += CmbStudents_SelectedIndexChanged;
             // 
@@ -72,27 +73,28 @@
             // 
             CmbGrades.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbGrades.FormattingEnabled = true;
-            CmbGrades.Location = new Point(138, 53);
+            CmbGrades.Location = new Point(164, 53);
             CmbGrades.Name = "CmbGrades";
-            CmbGrades.Size = new Size(414, 29);
+            CmbGrades.Size = new Size(734, 40);
             CmbGrades.TabIndex = 3;
             CmbGrades.SelectedIndexChanged += CmbGrades_SelectedIndexChanged;
             // 
             // BtnContinue
             // 
-            BtnContinue.Location = new Point(452, 180);
+            BtnContinue.Location = new Point(743, 181);
             BtnContinue.Name = "BtnContinue";
-            BtnContinue.Size = new Size(100, 34);
+            BtnContinue.Size = new Size(146, 57);
             BtnContinue.TabIndex = 2;
             BtnContinue.Text = "Continuar";
             BtnContinue.UseVisualStyleBackColor = true;
+            BtnContinue.Click += BtnContinue_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Location = new Point(37, 119);
             label2.Name = "label2";
-            label2.Size = new Size(68, 21);
+            label2.Size = new Size(103, 32);
             label2.TabIndex = 1;
             label2.Text = "Alumno:";
             // 
@@ -101,7 +103,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(37, 56);
             label1.Name = "label1";
-            label1.Size = new Size(56, 21);
+            label1.Size = new Size(83, 32);
             label1.TabIndex = 0;
             label1.Text = "Grado:";
             // 
@@ -110,7 +112,7 @@
             GbVote.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             GbVote.BackColor = Color.Transparent;
             GbVote.Controls.Add(FlpVote);
-            GbVote.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            GbVote.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             GbVote.Location = new Point(12, 300);
             GbVote.Margin = new Padding(0);
             GbVote.Name = "GbVote";
@@ -121,23 +123,22 @@
             // 
             // FlpVote
             // 
-            FlpVote.BorderStyle = BorderStyle.FixedSingle;
             FlpVote.Dock = DockStyle.Fill;
             FlpVote.FlowDirection = FlowDirection.TopDown;
-            FlpVote.Location = new Point(3, 25);
+            FlpVote.Location = new Point(3, 31);
             FlpVote.Name = "FlpVote";
-            FlpVote.Size = new Size(1426, 418);
+            FlpVote.Size = new Size(1426, 412);
             FlpVote.TabIndex = 0;
             // 
             // BtnVote
             // 
             BtnVote.BackColor = SystemColors.Control;
             BtnVote.Enabled = false;
-            BtnVote.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnVote.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             BtnVote.ForeColor = SystemColors.ControlText;
-            BtnVote.Location = new Point(126, 763);
+            BtnVote.Location = new Point(138, 763);
             BtnVote.Name = "BtnVote";
-            BtnVote.Size = new Size(83, 34);
+            BtnVote.Size = new Size(100, 45);
             BtnVote.TabIndex = 2;
             BtnVote.Text = "Votar";
             BtnVote.UseVisualStyleBackColor = true;
@@ -145,20 +146,32 @@
             // 
             // BtnChange
             // 
-            BtnChange.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnChange.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             BtnChange.Location = new Point(15, 763);
             BtnChange.Name = "BtnChange";
-            BtnChange.Size = new Size(105, 34);
+            BtnChange.Size = new Size(117, 45);
             BtnChange.TabIndex = 3;
             BtnChange.Text = "Cambiar";
             BtnChange.UseVisualStyleBackColor = true;
             BtnChange.Click += BtnChange_Click;
             // 
+            // BtnNew
+            // 
+            BtnNew.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BtnNew.Location = new Point(244, 763);
+            BtnNew.Name = "BtnNew";
+            BtnNew.Size = new Size(118, 45);
+            BtnNew.TabIndex = 4;
+            BtnNew.Text = "Nuevo";
+            BtnNew.UseVisualStyleBackColor = true;
+            BtnNew.Click += BtnNew_Click;
+            // 
             // FormVotes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1456, 809);
+            ClientSize = new Size(1456, 828);
+            Controls.Add(BtnNew);
             Controls.Add(BtnChange);
             Controls.Add(BtnVote);
             Controls.Add(GbVote);
@@ -190,5 +203,6 @@
         private Button BtnVote;
         private FlowLayoutPanel FlpVote;
         private Button BtnChange;
+        private Button BtnNew;
     }
 }

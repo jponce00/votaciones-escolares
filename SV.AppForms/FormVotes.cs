@@ -37,6 +37,8 @@ namespace SV.AppForms
                     .ToList();
 
                 CmbGrades.Items.Clear();
+                CmbGrades.Items.Add("Seleccione su grado");
+
                 foreach (var grade in _grades)
                 {
                     CmbGrades.Items.Add(grade.Name);
@@ -60,7 +62,9 @@ namespace SV.AppForms
                     .ToList();
 
                 CmbStudents.Items.Clear();
-                if (_students.Any())
+                CmbStudents.Items.Add("Seleccione su nombre");
+
+                if (_students.Any() || _gradeId == 0)
                 {
                     foreach (var student in _students)
                     {
@@ -141,6 +145,19 @@ namespace SV.AppForms
             _candidateId = Convert.ToInt32(button!.Tag);
         }
 
+        private void EnableVoteZone(bool value)
+        {
+            this.FlpVote.Enabled = value;
+            this.BtnChange.Enabled = value;
+        }
+
+        private void EnableVoterSelectionZone(bool value)
+        {
+            this.CmbGrades.Enabled = value;
+            this.CmbStudents.Enabled = value;
+            this.BtnContinue.Enabled = value;
+        }
+
         private async void FormVotes_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!correctPass)
@@ -172,14 +189,28 @@ namespace SV.AppForms
 
         private void CmbGrades_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _gradeId = _grades!.FirstOrDefault(g => g.Name == CmbGrades.Text)!.Id;
+            if (this.CmbGrades.SelectedIndex != 0)
+            {
+                _gradeId = _grades!.FirstOrDefault(g => g.Name == CmbGrades.Text)!.Id;
+            }
+            else
+            {
+                _gradeId = 0;
+            }
+
+            this.CmbStudents.Enabled = _gradeId != 0;
             this.LoadStudents();
+
+            this.BtnNew.Enabled = false;
         }
 
         private void FormVotes_Load(object sender, EventArgs e)
         {
-            this.LoadGrades();
             this.DesignCandidatesArea();
+            this.EnableVoteZone(false);
+            this.EnableVoterSelectionZone(true);
+
+            this.LoadGrades();
         }
 
         private void BtnChange_Click(object sender, EventArgs e)
@@ -200,7 +231,6 @@ namespace SV.AppForms
                 Vote vote = new()
                 {
                     StudentId = _studentId,
-                    GradeId = _gradeId,
                     ShiftId = _loginInfo.Shift,
                     CandidateId = _candidateId
                 };
@@ -210,6 +240,8 @@ namespace SV.AppForms
                 if (isSuccess)
                 {
                     MessageBoxComponent.ShowInfo(ReplyMessage.MESSAGE_VOTE_SUCCESS);
+                    this.EnableVoteZone(false);
+                    this.BtnNew.Enabled = true;
                 }
                 else
                 {
@@ -232,7 +264,32 @@ namespace SV.AppForms
 
         private void CmbStudents_SelectedIndexChanged(object sender, EventArgs e)
         {
-            _studentId = _students!.FirstOrDefault(s => s.Name == CmbStudents.Text)!.Id;
+            if (this.CmbStudents.SelectedIndex != 0)
+            {
+                _studentId = _students!.FirstOrDefault(s => s.Name == CmbStudents.Text)!.Id;
+            }
+            else
+            {
+                _studentId = 0;
+            }
+
+            this.BtnContinue.Enabled = _studentId != 0;
+        }
+
+        private void BtnContinue_Click(object sender, EventArgs e)
+        {
+            this.EnableVoteZone(true);
+            this.EnableVoterSelectionZone(false);
+        }
+
+        private void BtnNew_Click(object sender, EventArgs e)
+        {
+            this.EnableVoteZone(false);
+
+            this.CmbGrades.Enabled = true;
+            this.CmbGrades.SelectedIndex = 0;
+
+            this.BtnNew.Enabled = false;
         }
     }
 }
