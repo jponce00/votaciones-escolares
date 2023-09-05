@@ -13,6 +13,15 @@ namespace SV.Infrastructure.Persistences.Contexts.Configurations
 
             builder.HasIndex(e => new { e.Name, e.GradeId })
                 .IsUnique();
+
+            builder.HasData(
+                new Student
+                {
+                    Id = 1,
+                    Name = "JAIRO JOSUE PONCE VILLALTA",
+                    GradeId = 1,
+                    CreatedYear = DateTime.Now.Year
+                });
         }
     }
 }

@@ -13,7 +13,7 @@ namespace SV.Infrastructure.Persistences.Contexts.Configurations
             builder.HasOne(e => e.Student)
                 .WithMany()
                 .HasForeignKey(e => e.StudentId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(e => e.Shift)
                 .WithMany()

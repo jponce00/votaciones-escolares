@@ -1,14 +1,12 @@
-﻿namespace SV.Domain.Entities
+﻿namespace SV.Utilities.Dtos.Candidate
 {
-    public class Candidate : BaseEntity
+    public class CandidateDto
     {
         public string Team { get; set; } = null!;
 
         public int StudentId { get; set; }
 
-        public Student Student { get; set; }
-
-        public int ShiftId { get; set; }
+        public int GradeId { get; set; }
 
         public string? AttachmentName { get; set; }
 

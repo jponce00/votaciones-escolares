@@ -13,6 +13,10 @@ namespace SV.AppForms
         private readonly LoginInfo _loginInfo;
 
         private List<Grade>? _grades;
+        private List<Student>? _students;
+
+        private int _gradeId = 0;
+        private int _studentId = 0;
         private string? _filePath;
 
         public FormCandidatesAdd(IUnitOfWork unitOfWork, LoginInfo loginInfo, int? id = null)
@@ -26,10 +30,10 @@ namespace SV.AppForms
 
         private bool ValidateData()
         {
-            if (TxtName.Text.Trim().Length == 0)
+            if (CmbStudents.Text.Trim().Length == 0)
             {
                 MessageBoxComponent.ShowWarning("Debe completar el campo Nombre.");
-                TxtName.Focus();
+                CmbStudents.Focus();
 
                 return false;
             }
@@ -55,12 +59,11 @@ namespace SV.AppForms
 
         private void CleanTexts()
         {
-            TxtName.Text = string.Empty;
             TxtTeam.Text = string.Empty;
             LblImage.Text = string.Empty;
             PbImage.Image = null;
 
-            TxtName.Focus();
+            TxtTeam.Focus();
         }
 
         private async Task LoadGradesAsync()
@@ -72,16 +75,54 @@ namespace SV.AppForms
                 .OrderBy(g => g.Name)
                 .ToListAsync();
 
-                foreach (var grade in _grades)
+                if (_grades.Any())
                 {
-                    CmbGrades.Items.Add(grade.Name);
-                }
+                    foreach (var grade in _grades)
+                    {
+                        CmbGrades.Items.Add(grade.Name);
+                    }
 
-                CmbGrades.SelectedIndex = 0;
+                    CmbGrades.SelectedIndex = 0;
+                }
+                else
+                {
+                    MessageBoxComponent.ShowWarning("Debe agregar un Grado para poder agregar un candidato.");
+                }
             }
             catch (Exception)
             {
-                MessageBoxComponent.ShowWarning("Debe agregar un Grado para poder agregar un candidato.");
+                MessageBoxComponent.ShowWarning("Ocurrió un error al cargar los grados.");
+            }
+        }
+
+        private void LoadStudents()
+        {
+            try
+            {
+                _students = _unitOfWork.Student
+                    .GetEntityQuery(s => s.GradeId.Equals(_gradeId))
+                    .OrderBy(s => s.Name)
+                    .ToList();
+
+                CmbStudents.Items.Clear();
+
+                if (_students.Any())
+                {
+                    foreach (var student in _students)
+                    {
+                        CmbStudents.Items.Add(student.Name);
+                    }
+
+                    CmbStudents.SelectedIndex = 0;
+                }
+                else
+                {
+                    MessageBoxComponent.ShowWarning("Debe agregar alumnos al grado para poder agregar el candidato.");
+                }
+            }
+            catch (Exception)
+            {
+                MessageBoxComponent.ShowError("Ocurrió un error al cargar los estudiantes del grado.");
             }
         }
 
@@ -95,9 +136,8 @@ namespace SV.AppForms
                     {
                         Candidate candidate = new()
                         {
-                            Name = TxtName.Text,
                             Team = TxtTeam.Text,
-                            GradeId = _grades!.FirstOrDefault(g => g.Name == CmbGrades.Text)!.Id,
+                            StudentId = _students!.FirstOrDefault(s => s.Name == CmbStudents.Text)!.Id,
                             ShiftId = _loginInfo.Shift
                         };
 
@@ -119,6 +159,10 @@ namespace SV.AppForms
                             MessageBoxComponent.ShowError(ReplyMessage.MESSAGE_FAILED);
                         }
                     }
+                    catch (NullReferenceException)
+                    {
+                        MessageBoxComponent.ShowWarning("El alumno debe ser elegido de entre las opciones.");
+                    }
                     catch (Exception)
                     {
                         MessageBoxComponent.ShowError("Ocurrió un error al guardar el candidato.");
@@ -135,9 +179,8 @@ namespace SV.AppForms
                     {
                         if (this.ValidateData())
                         {
-                            candidate.Name = TxtName.Text;
                             candidate.Team = TxtTeam.Text;
-                            candidate.GradeId = _grades!.FirstOrDefault(g => g.Name == CmbGrades.Text)!.Id;
+                            candidate.StudentId = _students!.FirstOrDefault(s => s.Name == CmbStudents.Text)!.Id;
 
                             if (_filePath != null)
                             {
@@ -163,6 +206,10 @@ namespace SV.AppForms
                         MessageBoxComponent.ShowError(ReplyMessage.MESSAGE_DOESNOT_EXIST);
                     }
                 }
+                catch (NullReferenceException)
+                {
+                    MessageBoxComponent.ShowWarning("Ocurrió un error al guardar el candidato.");
+                }
                 catch (Exception)
                 {
                     MessageBoxComponent.ShowError("Ocurrió un error al actualizar el candidato.");
@@ -179,13 +226,13 @@ namespace SV.AppForms
             {
                 try
                 {
-                    var candidate = await _unitOfWork.Candidate.GetByIdAsync((int)this._id);
+                    var candidate = await _unitOfWork.Candidate.GetCandidateWithGradeAsync((int)this._id);
 
                     if (candidate != null)
                     {
-                        TxtName.Text = candidate.Name;
                         TxtTeam.Text = candidate.Team;
                         CmbGrades.Text = _grades!.FirstOrDefault(g => g.Id == candidate.GradeId)!.Name;
+                        CmbStudents.Text = _students!.FirstOrDefault(s => s.Id == candidate.StudentId)!.Name;
                         LblImage.Text = "Sin imagen";
 
                         if (candidate.AttachmentData != null)
@@ -234,6 +281,12 @@ namespace SV.AppForms
         private void BtnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void CmbGrades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            _gradeId = _grades!.FirstOrDefault(g => g.Name == CmbGrades.Text)!.Id;
+            this.LoadStudents();
         }
     }
 }

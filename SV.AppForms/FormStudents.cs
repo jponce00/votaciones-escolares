@@ -139,11 +139,6 @@ namespace SV.AppForms
 
         private async void BtnDeleteAll_Click(object sender, EventArgs e)
         {
-            if (DgvStudents.RowCount == 0)
-            {
-                return;
-            }
-
             DialogResult resp;
 
             resp = MessageBoxComponent.ShowQuestion("¿Desea eliminar los estudiantes del grado?", "Eliminar lista");

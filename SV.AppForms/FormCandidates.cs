@@ -21,14 +21,24 @@ namespace SV.AppForms
         private async Task LoadCandidatesAsync()
         {
             var candidates = await _unitOfWork.Candidate.GetEntityQuery(c => c.ShiftId.Equals(_loginInfo.Shift))
-                .Join(_unitOfWork.Grade.GetEntityQuery(), c => c.GradeId, g => g.Id, (c, g) => new
+                .Join(_unitOfWork.Student.GetEntityQuery(), c => c.StudentId, s => s.Id, (c, s) => new
                 {
                     c.Id,
-                    c.Name,
                     c.Team,
-                    Grade = g.Name,
+                    c.StudentId,
+                    s.Name,
+                    s.GradeId,
                     HasImage = c.AttachmentName != null,
                     IsUpdated = c.CreatedYear == DateTime.Now.Year
+                })
+                .Join(_unitOfWork.Grade.GetEntityQuery(), x => x.GradeId, g => g.Id, (x, g) => new
+                {
+                    x.Id,
+                    x.Team,
+                    x.Name,
+                    Grade = g.Name,
+                    x.HasImage,
+                    x.IsUpdated
                 })
                 .ToListAsync();
 

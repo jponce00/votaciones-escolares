@@ -8,20 +8,24 @@ namespace SV.Infrastructure.Persistences.Contexts.Configurations
     {
         public void Configure(EntityTypeBuilder<Candidate> builder)
         {
-            builder.Property(e => e.Name)
+            builder.Property(e => e.Team)
                 .HasMaxLength(200);
 
-            builder.HasIndex(e => new { e.Name, e.GradeId })
+            builder.HasIndex(e => e.StudentId)
                 .IsUnique();
+
+            builder.HasOne(e => e.Student)
+                .WithMany()
+                .HasForeignKey(e => e.StudentId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasData(
                 new Candidate
                 {
                     Id = 1,
-                    Name = "JAIRO JOSUE PONCE VILLALTA",
                     Team = "Planilla #1",
                     ShiftId = 1,
-                    GradeId = 1,
+                    StudentId = 1,
                     CreatedYear = DateTime.Now.Year
                 });
         }
