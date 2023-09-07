@@ -7,14 +7,16 @@
         private readonly FormUsers _formUsers;
         private readonly FormCandidates _formCandidates;
         private readonly FormVotes _formVotes;
+        private readonly FormResults _formResults;
 
-        public MainForm(FormLogin formLogin, FormGrades formGrades, FormUsers formUsers, FormCandidates formCandidates, FormVotes formVotes)
+        public MainForm(FormLogin formLogin, FormGrades formGrades, FormUsers formUsers, FormCandidates formCandidates, FormVotes formVotes, FormResults formResults)
         {
             _formLogin = formLogin;
             _formGrades = formGrades;
             _formUsers = formUsers;
             _formCandidates = formCandidates;
             _formVotes = formVotes;
+            _formResults = formResults;
 
             InitializeComponent();
         }
@@ -47,6 +49,11 @@
         private void BtnVotes_Click(object sender, EventArgs e)
         {
             _formVotes.ShowDialog();
+        }
+
+        private void BtnResults_Click(object sender, EventArgs e)
+        {
+            _formResults.ShowDialog();
         }
     }
 }

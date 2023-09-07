@@ -36,6 +36,7 @@
             toolTipUser = new ToolTip(components);
             BtnCandidates = new Button();
             BtnVotes = new Button();
+            BtnResults = new Button();
             ((System.ComponentModel.ISupportInitialize)PbUser).BeginInit();
             SuspendLayout();
             // 
@@ -90,11 +91,22 @@
             BtnVotes.UseVisualStyleBackColor = true;
             BtnVotes.Click += BtnVotes_Click;
             // 
+            // BtnResults
+            // 
+            BtnResults.Location = new Point(524, 144);
+            BtnResults.Name = "BtnResults";
+            BtnResults.Size = new Size(88, 38);
+            BtnResults.TabIndex = 6;
+            BtnResults.Text = "Resultados";
+            BtnResults.UseVisualStyleBackColor = true;
+            BtnResults.Click += BtnResults_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(BtnResults);
             Controls.Add(BtnVotes);
             Controls.Add(BtnCandidates);
             Controls.Add(PbUser);
@@ -117,5 +129,6 @@
         private ToolTip toolTipUser;
         private Button BtnCandidates;
         private Button BtnVotes;
+        private Button BtnResults;
     }
 }

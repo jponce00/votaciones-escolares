@@ -51,7 +51,7 @@
             GbLogin.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             GbLogin.Location = new Point(28, 12);
             GbLogin.Name = "GbLogin";
-            GbLogin.Size = new Size(402, 380);
+            GbLogin.Size = new Size(402, 282);
             GbLogin.TabIndex = 0;
             GbLogin.TabStop = false;
             GbLogin.Text = "Iniciar sesión";
@@ -60,7 +60,7 @@
             // 
             CmbShift.DropDownStyle = ComboBoxStyle.DropDownList;
             CmbShift.FormattingEnabled = true;
-            CmbShift.Location = new Point(147, 212);
+            CmbShift.Location = new Point(147, 153);
             CmbShift.Name = "CmbShift";
             CmbShift.Size = new Size(146, 29);
             CmbShift.TabIndex = 6;
@@ -68,15 +68,15 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(36, 215);
+            label3.Location = new Point(36, 156);
             label3.Name = "label3";
-            label3.Size = new Size(65, 21);
+            label3.Size = new Size(68, 21);
             label3.TabIndex = 5;
-            label3.Text = "Jornada";
+            label3.Text = "Jornada:";
             // 
             // BtnLogin
             // 
-            BtnLogin.Location = new Point(129, 303);
+            BtnLogin.Location = new Point(129, 226);
             BtnLogin.Name = "BtnLogin";
             BtnLogin.Size = new Size(154, 37);
             BtnLogin.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // TxtPassword
             // 
-            TxtPassword.Location = new Point(147, 140);
+            TxtPassword.Location = new Point(147, 106);
             TxtPassword.Name = "TxtPassword";
             TxtPassword.Size = new Size(237, 29);
             TxtPassword.TabIndex = 3;
@@ -104,26 +104,26 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(36, 143);
+            label2.Location = new Point(36, 109);
             label2.Name = "label2";
-            label2.Size = new Size(89, 21);
+            label2.Size = new Size(92, 21);
             label2.TabIndex = 1;
-            label2.Text = "Contraseña";
+            label2.Text = "Contraseña:";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Location = new Point(36, 62);
             label1.Name = "label1";
-            label1.Size = new Size(64, 21);
+            label1.Size = new Size(67, 21);
             label1.TabIndex = 0;
-            label1.Text = "Usuario";
+            label1.Text = "Usuario:";
             // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(458, 435);
+            ClientSize = new Size(458, 319);
             Controls.Add(GbLogin);
             Name = "FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
